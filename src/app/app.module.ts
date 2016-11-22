@@ -8,12 +8,16 @@ import {RouterModule} from "@angular/router";
 import {ChallengeComponent} from "./challenge/challenge.component";
 import {HomeComponent} from "./home/home.component";
 import {QuizService} from "./services/quiz.service";
+import {FreeplayComponent} from "./freeplay/freeplay.component";
+import {QuestionComponent} from "./question/question.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ChallengeComponent
+    ChallengeComponent,
+    FreeplayComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +27,14 @@ import {QuizService} from "./services/quiz.service";
       {
         path: '',
         component: HomeComponent
+      },
+      {
+        path: 'challenge',
+        component: ChallengeComponent
+      },
+      {
+        path: 'freeplay',
+        component: FreeplayComponent
       }
     ])
   ],

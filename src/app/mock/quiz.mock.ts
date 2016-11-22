@@ -1,0 +1,205 @@
+/**
+ * Created by lukasz on 22.11.2016.
+ */
+
+export const QUIZ = [{
+  "id": 4,
+  "uuid": "4",
+  "answerDefinitions": [{
+    "id": 13,
+    "uuid": "13",
+    "text": "thisIsANullValue",
+    "resource": "thisIsANullValue",
+    "valid": true
+  }, {
+    "id": 16,
+    "uuid": "16",
+    "text": "thisIsANullValue",
+    "resource": "thisIsANullValue",
+    "valid": false
+  }, {
+    "id": 14,
+    "uuid": "14",
+    "text": "thisIsANullValue",
+    "resource": "thisIsANullValue",
+    "valid": false
+  }, {
+    "id": 15,
+    "uuid": "15",
+    "text": "thisIsANullValue",
+    "resource": "thisIsANullValue",
+    "valid": false
+  }],
+  "text": "thisIsANullValue",
+  "questionType": "IMAGE",
+  "answerType": "ABCD",
+  "resource": "question4.png"
+}, {
+  "id": 7,
+  "uuid": "7",
+  "answerDefinitions": [],
+  "text": "Text question 2",
+  "questionType": "TEXT",
+  "answerType": "ABCD",
+  "resource": "thisIsANullValue"
+}, {
+  "id": 10,
+  "uuid": "10",
+  "answerDefinitions": [],
+  "text": "Text question 5",
+  "questionType": "TEXT",
+  "answerType": "ABCD",
+  "resource": "thisIsANullValue"
+}, {
+  "id": 9,
+  "uuid": "9",
+  "answerDefinitions": [],
+  "text": "Text question 4",
+  "questionType": "TEXT",
+  "answerType": "ABCD",
+  "resource": "thisIsANullValue"
+}, {
+  "id": 5,
+  "uuid": "5",
+  "answerDefinitions": [{
+    "id": 20,
+    "uuid": "20",
+    "text": "thisIsANullValue",
+    "resource": "thisIsANullValue",
+    "valid": true
+  }, {
+    "id": 19,
+    "uuid": "19",
+    "text": "thisIsANullValue",
+    "resource": "thisIsANullValue",
+    "valid": false
+  }, {
+    "id": 17,
+    "uuid": "17",
+    "text": "thisIsANullValue",
+    "resource": "thisIsANullValue",
+    "valid": false
+  }, {
+    "id": 18,
+    "uuid": "18",
+    "text": "thisIsANullValue",
+    "resource": "thisIsANullValue",
+    "valid": false
+  }],
+  "text": "thisIsANullValue",
+  "questionType": "IMAGE",
+  "answerType": "ABCD",
+  "resource": "question5.png"
+}, {
+  "id": 8,
+  "uuid": "8",
+  "answerDefinitions": [],
+  "text": "Text question 3",
+  "questionType": "TEXT",
+  "answerType": "ABCD",
+  "resource": "thisIsANullValue"
+}, {
+  "id": 1,
+  "uuid": "1",
+  "answerDefinitions": [{
+    "id": 1,
+    "uuid": "1",
+    "text": "thisIsANullValue",
+    "resource": "thisIsANullValue",
+    "valid": false
+  }, {
+    "id": 4,
+    "uuid": "4",
+    "text": "thisIsANullValue",
+    "resource": "thisIsANullValue",
+    "valid": false
+  }, {
+    "id": 3,
+    "uuid": "3",
+    "text": "thisIsANullValue",
+    "resource": "thisIsANullValue",
+    "valid": true
+  }, {
+    "id": 2,
+    "uuid": "2",
+    "text": "thisIsANullValue",
+    "resource": "thisIsANullValue",
+    "valid": false
+  }],
+  "text": "thisIsANullValue",
+  "questionType": "IMAGE",
+  "answerType": "ABCD",
+  "resource": "question1.png"
+}, {
+  "id": 2,
+  "uuid": "2",
+  "answerDefinitions": [{
+    "id": 6,
+    "uuid": "6",
+    "text": "thisIsANullValue",
+    "resource": "thisIsANullValue",
+    "valid": true
+  }, {
+    "id": 7,
+    "uuid": "7",
+    "text": "thisIsANullValue",
+    "resource": "thisIsANullValue",
+    "valid": false
+  }, {
+    "id": 8,
+    "uuid": "8",
+    "text": "thisIsANullValue",
+    "resource": "thisIsANullValue",
+    "valid": false
+  }, {
+    "id": 5,
+    "uuid": "5",
+    "text": "thisIsANullValue",
+    "resource": "thisIsANullValue",
+    "valid": false
+  }],
+  "text": "thisIsANullValue",
+  "questionType": "IMAGE",
+  "answerType": "ABCD",
+  "resource": "question2.png"
+}, {
+  "id": 3,
+  "uuid": "3",
+  "answerDefinitions": [{
+    "id": 11,
+    "uuid": "11",
+    "text": "thisIsANullValue",
+    "resource": "thisIsANullValue",
+    "valid": false
+  }, {
+    "id": 10,
+    "uuid": "10",
+    "text": "thisIsANullValue",
+    "resource": "thisIsANullValue",
+    "valid": false
+  }, {
+    "id": 12,
+    "uuid": "12",
+    "text": "thisIsANullValue",
+    "resource": "thisIsANullValue",
+    "valid": false
+  }, {
+    "id": 9,
+    "uuid": "9",
+    "text": "thisIsANullValue",
+    "resource": "thisIsANullValue",
+    "valid": true
+  }],
+  "text": "thisIsANullValue",
+  "questionType": "IMAGE",
+  "answerType": "ABCD",
+  "resource": "question3.png"
+}, {
+  "id": 6,
+  "uuid": "6",
+  "answerDefinitions": [],
+  "text": "Text question 1",
+  "questionType": "TEXT",
+  "answerType": "ABCD",
+  "resource": "thisIsANullValue"
+}]
