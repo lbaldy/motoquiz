@@ -4,17 +4,31 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import {RouterModule} from "@angular/router";
+import {ChallengeComponent} from "./challenge/challenge.component";
+import {HomeComponent} from "./home/home.component";
+import {QuizService} from "./services/quiz.service";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    ChallengeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: HomeComponent
+      }
+    ])
   ],
-  providers: [],
+  providers: [
+    QuizService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
