@@ -5,14 +5,12 @@ import {DeserializableInterface} from "./DeserializableInterface";
 export class Answer implements DeserializableInterface<Answer> {
 
   deserialize(input) {
-    if(input){
-      this._valid = input.valid;
-      this._id = input.id;
-      this._uuid = input.uuid;
-      this._text = input.text;
-      this._resource = input.resource;
-      this._valid = input.valid;
-    }
+    this._valid = input.valid;
+    this._id = input.id;
+    this._uuid = input.uuid;
+    this._text = input.text;
+    this._resource = input.resource;
+    this._valid = input.valid;
     return this;
   }
 

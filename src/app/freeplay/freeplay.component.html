@@ -1,2 +1,2 @@
-
-<bms-question-component [question]="selectedQuestion"></bms-question-component>
+<div *ngIf="finished">KONIEC</div>
+<bms-question-component *ngIf="!finished" (selectedAnswer)="storeAnswerAndMoveToNextQuestion($event)" [question]="selectedQuestion"></bms-question-component>

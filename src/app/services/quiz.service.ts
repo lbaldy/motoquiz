@@ -15,10 +15,7 @@ export class QuizService {
   constructor(private http:Http) {
   }
 
-  getQuiz():Promise<Quiz> {
-
-    console.log(config.baseUrl + "/question/random/5");
-
+  getRandomQuestions():Promise<Quiz> {
     return this.http.get(config.baseUrl + "/question/random/5")
       .toPromise()
       .then(quizResponse => {

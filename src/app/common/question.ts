@@ -15,7 +15,7 @@ export class Question implements DeserializableInterface<Question> {
     this._answerDefinitions = []
     input.answerDefinitions.forEach(answer => {
       let answerObject = new Answer();
-      this._answerDefinitions.push(answerObject.deserialize(answer.answerDefinitions));
+      this._answerDefinitions.push(answerObject.deserialize(answer));
     })
     return this;
   }

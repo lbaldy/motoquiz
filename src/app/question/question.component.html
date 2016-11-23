@@ -1,3 +1,6 @@
 <div *ngIf="question">
-  {{question.text}}
+  <img src="{{resourceUrl + question.resource}}" class="img-responsive"/>
+
+  <button *ngFor="let answer of question.answerDefinitions" (click)="selectAnswer(answer.id)" class="btn btn-lg btn-block margin-10p">{{answer.text}}</button>
+
 </div>
