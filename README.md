@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/lbaldy/motoquiz.png?label=ready&title=Ready)](https://waffle.io/lbaldy/motoquiz)
 # Quizzes
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.20-4.
