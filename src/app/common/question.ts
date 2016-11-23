@@ -11,7 +11,8 @@ export class Question implements DeserializableInterface<Question> {
     this._text = input.text;
     this._questionType = input.type;
     this._answerType = input.answerType;
-    this._resource = input.resource;
+    this._resourceHard = input.resourceHard;
+    this._resourceEasy = input.resourceEasy;
     this._answerDefinitions = []
     input.answerDefinitions.forEach(answer => {
       let answerObject = new Answer();
@@ -26,7 +27,8 @@ export class Question implements DeserializableInterface<Question> {
   private _text:string;
   private _questionType:string;
   private _answerType:string;
-  private _resource:string;
+  private _resourceHard:string;
+  private _resourceEasy:string;
 
   get id():number {
     return this._id;
@@ -76,11 +78,19 @@ export class Question implements DeserializableInterface<Question> {
     this._answerType = value;
   }
 
-  get resource():string {
-    return this._resource;
+  get resourceHard():string {
+    return this._resourceHard;
   }
 
-  set resource(value:string) {
-    this._resource = value;
+  set resourceHard(value:string) {
+    this._resourceHard = value;
+  }
+
+  get resourceEasy():string {
+    return this._resourceEasy;
+  }
+
+  set resourceEasy(value:string) {
+    this._resourceEasy = value;
   }
 }
