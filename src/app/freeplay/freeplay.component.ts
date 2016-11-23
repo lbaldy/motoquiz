@@ -3,9 +3,9 @@
  */
 
 import {Component, OnInit} from "@angular/core";
-import {Quiz} from "../objects/quiz";
+import {Quiz} from "../common/quiz";
 import {QuizService} from "../services/quiz.service";
-import {Question} from "../objects/question";
+import {Question} from "../common/question";
 
 @Component({
   selector: 'bms-freeplay-component',

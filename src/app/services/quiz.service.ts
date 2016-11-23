@@ -4,15 +4,31 @@
 
 
 import {Injectable} from "@angular/core";
-import {Question} from "../objects/question";
-import {QUIZ} from "../mock/quiz.mock";
-import {Quiz} from "../objects/quiz";
+import {Quiz} from "../common/quiz";
+import {Http} from "@angular/http";
+import "rxjs/add/operator/toPromise";
+import {config} from "../common/config";
+
 @Injectable()
 export class QuizService {
 
+  constructor(private http:Http) {
+  }
+
   getQuiz():Promise<Quiz> {
-    let quiz = new Quiz();
-    return Promise.resolve(quiz.deserialize(QUIZ));
+
+    console.log(config.baseUrl + "/question/random/5");
+
+    return this.http.get(config.baseUrl + "/question/random/5")
+      .toPromise()
+      .then(quizResponse => {
+        let quiz = new Quiz();
+        quiz.deserialize(quizResponse.json())
+        return quiz
+      })
+      .catch(function () {
+        console.log(arguments);
+      })
   }
 
 }

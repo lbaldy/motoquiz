@@ -2,7 +2,7 @@ import {DeserializableInterface} from "./DeserializableInterface";
 /**
  * Created by lukasz on 22.11.2016.
  */
-export class Answer implements DeserializableInterface {
+export class Answer implements DeserializableInterface<Answer> {
 
   deserialize(input) {
     if(input){

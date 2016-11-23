@@ -4,7 +4,7 @@ import {DeserializableInterface} from "./DeserializableInterface";
  * Created by lukasz on 22.11.2016.
  */
 
-export class Question implements DeserializableInterface {
+export class Question implements DeserializableInterface<Question> {
   deserialize(input) {
     this._id = input.id;
     this._uuid = input.uuid;

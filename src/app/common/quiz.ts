@@ -5,7 +5,7 @@ import {Question} from "./question";
  */
 
 
-export class Quiz implements DeserializableInterface {
+export class Quiz implements DeserializableInterface<Quiz> {
 
   private _questions:Array<Question>;
 
