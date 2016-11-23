@@ -14,8 +14,10 @@ import {Question} from "../common/question";
 
 export class FreeplayComponent implements OnInit {
 
+
   private quiz:Quiz
   private selectedQuestionIndex:number = 0;
+  private quizLength:number;
   private finished = false;
   private selectedQuestion:Question;
 
@@ -23,23 +25,34 @@ export class FreeplayComponent implements OnInit {
   }
 
   ngOnInit():void {
+this.getRandomQuestions();
+  }
+
+  getRandomQuestions():void {
     var self = this;
+    this.selectedQuestionIndex = 0;
+    this.finished = false;
+    this.selectedQuestion = null;
     this.quizService.getRandomQuestions().then(quiz => {
       self.quiz = quiz;
+      self.quizLength = self.quiz.questions.length;
       self.selectedQuestion = quiz.questions[self.selectedQuestionIndex];
     });
-
   }
 
   storeAnswerAndMoveToNextQuestion(event:any):void {
     console.log(event);
     let currentIndex = ++this.selectedQuestionIndex;
-    if(this.quiz.questions[currentIndex]){
+    if (this.quiz.questions[currentIndex]) {
       this.selectedQuestion = this.quiz.questions[currentIndex];
     } else {
       this.finished = true;
     }
-
   }
+
+  startAgain():void {
+    this.getRandomQuestions()
+  }
+
 
 }

@@ -1,2 +1,9 @@
-<div *ngIf="finished">KONIEC</div>
-<bms-question-component *ngIf="!finished" (selectedAnswer)="storeAnswerAndMoveToNextQuestion($event)" [question]="selectedQuestion"></bms-question-component>
+<div *ngIf="finished">
+  <h1 class="text-center">KONIEC</h1>
+  <button (click)="startAgain()" class="btn-block btn-lg btn">Jeszcze raz <i class="glyphicon glyphicon-repeat"></i></button>
+</div>
+<div *ngIf="!finished">
+  <h1 class="text-center">Pytanie {{selectedQuestionIndex + 1}}/{{quizLength}}</h1>
+  <bms-question-component (selectedAnswer)="storeAnswerAndMoveToNextQuestion($event)" [question]="selectedQuestion"></bms-question-component>
+</div>
+
