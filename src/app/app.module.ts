@@ -5,19 +5,22 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import {RouterModule} from "@angular/router";
-import {ChallengeComponent} from "./challenge/challenge.component";
+import {ChallengesComponent} from "./challenge/challenges.component";
 import {HomeComponent} from "./home/home.component";
 import {QuizService} from "./services/quiz.service";
 import {FreeplayComponent} from "./freeplay/freeplay.component";
 import {QuestionComponent} from "./question/question.component";
+import {MenuComponent} from "./menu/menu.component";
+import {ChallengeService} from "./services/challenge.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ChallengeComponent,
+    ChallengesComponent,
     FreeplayComponent,
-    QuestionComponent
+    QuestionComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,11 @@ import {QuestionComponent} from "./question/question.component";
       },
       {
         path: 'challenge',
-        component: ChallengeComponent
+        component: ChallengesComponent
+      },
+      {
+        path: 'challenge/:id',
+        component: ChallengesComponent
       },
       {
         path: 'freeplay',
@@ -39,7 +46,8 @@ import {QuestionComponent} from "./question/question.component";
     ])
   ],
   providers: [
-    QuizService
+    QuizService,
+    ChallengeService
   ],
   bootstrap: [AppComponent]
 })

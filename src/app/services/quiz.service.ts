@@ -16,7 +16,7 @@ export class QuizService {
   }
 
   getRandomQuestions():Promise<Quiz> {
-    return this.http.get(config.baseUrl + "/question/random/5")
+    return this.http.get(config.baseUrl + "question/random/5")
       .toPromise()
       .then(quizResponse => {
         let quiz = new Quiz();

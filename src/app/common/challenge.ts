@@ -12,7 +12,7 @@ export class Challenge implements DeserializableInterface<Challenge> {
   private _description:string;
   private _startDate:string;
   private _endDate:string;
-  private _active:oolean;
+  private _active:boolean;
   private _questions:Array<Question>
 
   deserialize(input) {
@@ -24,10 +24,12 @@ export class Challenge implements DeserializableInterface<Challenge> {
     this._endDate = input.endDate;
     this._active = input.active;
     this.questions = [];
-    input.questions.forEach(inputQuestion => {
-      let question = new Question();
-      this.questions.push(question.deserialize(inputQuestion));
-    })
+    if (input.questions) {
+      input.questions.forEach(inputQuestion => {
+        let question = new Question();
+        this.questions.push(question.deserialize(inputQuestion));
+      })
+    }
     return this;
   }
 
@@ -79,11 +81,11 @@ export class Challenge implements DeserializableInterface<Challenge> {
     this._endDate = value;
   }
 
-  get active():oolean {
+  get active():boolean {
     return this._active;
   }
 
-  set active(value:oolean) {
+  set active(value:boolean) {
     this._active = value;
   }
 
