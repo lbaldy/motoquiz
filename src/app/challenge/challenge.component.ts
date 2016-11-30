@@ -4,7 +4,10 @@
 
 
 import {Component, OnInit} from "@angular/core";
-import {Params} from "@angular/router";
+import {Params, ActivatedRoute} from "@angular/router";
+import {ChallengeService} from "../services/challenge.service";
+import {Challenge} from "../common/challenge";
+import {Question} from "../common/question";
 @Component({
   selector: 'bms-challenge-component',
   templateUrl: 'challenge.component.html'
@@ -12,34 +15,26 @@ import {Params} from "@angular/router";
 
 export class ChallengeComponent implements OnInit {
 
+  private challenge:Challenge;
+
+  private selectedQuestionIndex:number = 0;
+  private quizLength:number;
+  private finished = false;
+  private selectedQuestion:Question;
+
+  constructor(private route:ActivatedRoute, private challengeService:ChallengeService) {
+
+  }
+
   ngOnInit():void {
     this.route.params.forEach((params:Params) => {
       let id = params['id'];
       console.log(id);
-      this.guideService.getGuide(id).then(guide => {
-        this.guide = guide;
-        if(this.guide.markers.length > 0){
-          this.selectedMarker = this.guide.markers[0];
-          //this.selectMarker(this.guide.markers[0]);
-        }
-
-        console.log(this.guide)
+      this.challengeService.getChallenge(id).then(challenge => {
+        this.challenge = challenge
+        this.quizLength = challenge.questions.length;
+        this.selectedQuestion = challenge.questions[this.selectedQuestionIndex];
       });
     });
   }
-
-
-//   this.route.params.forEach((params:Params) => {
-//   let id = params['id'];
-//   console.log(id);
-//   this.guideService.getGuide(id).then(guide => {
-//   this.guide = guide;
-//   if(this.guide.markers.length > 0){
-//   this.selectedMarker = this.guide.markers[0];
-//   //this.selectMarker(this.guide.markers[0]);
-// }
-//
-// console.log(this.guide)
-// });
-// });
 }

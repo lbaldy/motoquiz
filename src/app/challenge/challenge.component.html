@@ -1,1 +1,4 @@
-challenge picked
+<div *ngIf="challenge">
+  <h1 class="text-center">Pytanie {{selectedQuestionIndex + 1}}/{{quizLength}}</h1>
+  <bms-question-component (selectedAnswer)="storeAnswerAndMoveToNextQuestion($event)" [question]="selectedQuestion"></bms-question-component>
+</div>

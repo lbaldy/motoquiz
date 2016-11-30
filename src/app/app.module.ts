@@ -12,12 +12,14 @@ import {FreeplayComponent} from "./freeplay/freeplay.component";
 import {QuestionComponent} from "./question/question.component";
 import {MenuComponent} from "./menu/menu.component";
 import {ChallengeService} from "./services/challenge.service";
+import {ChallengeComponent} from "./challenge/challenge.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ChallengesComponent,
+    ChallengeComponent,
     FreeplayComponent,
     QuestionComponent,
     MenuComponent
@@ -32,12 +34,12 @@ import {ChallengeService} from "./services/challenge.service";
         component: HomeComponent
       },
       {
-        path: 'challenge',
+        path: 'challenges',
         component: ChallengesComponent
       },
       {
         path: 'challenge/:id',
-        component: ChallengesComponent
+        component: ChallengeComponent
       },
       {
         path: 'freeplay',

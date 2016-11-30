@@ -35,8 +35,10 @@ export class ChallengeService {
   getChallenge(challengeId:number):Promise<Challenge> {
     return this.http.get(config.baseUrl + '/challenge/' + challengeId)
       .toPromise()
-      .then(challenge => {
-        
+      .then(challengeInput => {
+        let challenge = new Challenge();
+        challenge.deserialize(challengeInput.json());
+        return challenge;
       })
   }
 
