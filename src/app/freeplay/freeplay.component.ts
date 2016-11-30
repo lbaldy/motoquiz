@@ -25,7 +25,7 @@ export class FreeplayComponent implements OnInit {
   }
 
   ngOnInit():void {
-this.getRandomQuestions();
+    this.getRandomQuestions();
   }
 
   getRandomQuestions():void {

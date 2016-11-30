@@ -37,4 +37,14 @@ export class ChallengeComponent implements OnInit {
       });
     });
   }
+
+  storeAnswerAndMoveToNextQuestion(event:any):void {
+    console.log(event);
+    let currentIndex = ++this.selectedQuestionIndex;
+    if (this.challenge.questions[currentIndex]) {
+      this.selectedQuestion = this.challenge.questions[currentIndex];
+    } else {
+      this.finished = true;
+    }
+  }
 }
