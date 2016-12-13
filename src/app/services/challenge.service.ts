@@ -15,7 +15,7 @@ export class ChallengeService {
   }
 
   getChallenges():Promise<Array<Challenge>> {
-    return this.http.get(config.baseUrl + "/challenge/list")
+    return this.http.get(config.baseUrl + "challenge/list")
       .toPromise()
       .then(challenges => {
         let challengesArray = [];
@@ -33,12 +33,26 @@ export class ChallengeService {
   }
 
   getChallenge(challengeId:number):Promise<Challenge> {
-    return this.http.get(config.baseUrl + '/challenge/' + challengeId)
+    return this.http.get(config.baseUrl + 'challenge/' + challengeId)
       .toPromise()
       .then(challengeInput => {
         let challenge = new Challenge();
         challenge.deserialize(challengeInput.json());
         return challenge;
+      })
+  }
+
+  submitAnswers(challenge:Challenge):Promise<any> {
+    return this.http.post(config.baseUrl + "answer/send", {
+      "answers": challenge.answers,
+      "challengeId": challenge.id
+    })
+      .toPromise()
+      .then(status => {
+        return true
+      })
+      .catch(error => {
+        return false;
       })
   }
 

@@ -16,7 +16,6 @@ import {Question} from "../common/question";
 export class ChallengeComponent implements OnInit {
 
   private challenge:Challenge;
-
   private selectedQuestionIndex:number = 0;
   private quizLength:number;
   private finished = false;
@@ -32,6 +31,7 @@ export class ChallengeComponent implements OnInit {
       console.log(id);
       this.challengeService.getChallenge(id).then(challenge => {
         this.challenge = challenge
+        this.challenge.answers = [];
         this.quizLength = challenge.questions.length;
         this.selectedQuestion = challenge.questions[this.selectedQuestionIndex];
       });
@@ -41,9 +41,11 @@ export class ChallengeComponent implements OnInit {
   storeAnswerAndMoveToNextQuestion(event:any):void {
     console.log(event);
     let currentIndex = ++this.selectedQuestionIndex;
+    this.challenge.answers.push(event);
     if (this.challenge.questions[currentIndex]) {
       this.selectedQuestion = this.challenge.questions[currentIndex];
     } else {
+      this.challengeService.submitAnswers(this.challenge)
       this.finished = true;
     }
   }

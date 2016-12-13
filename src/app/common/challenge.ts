@@ -14,6 +14,7 @@ export class Challenge implements DeserializableInterface<Challenge> {
   private _endDate:string;
   private _active:boolean;
   private _questions:Array<Question>
+  private _answers:Array<number>
 
   deserialize(input) {
     this._id = input.id;
@@ -95,6 +96,14 @@ export class Challenge implements DeserializableInterface<Challenge> {
 
   set questions(value:Array<Question>) {
     this._questions = value;
+  }
+
+  get answers():Array<number> {
+    return this._answers;
+  }
+
+  set answers(value:Array<number>) {
+    this._answers = value;
   }
 
 }
