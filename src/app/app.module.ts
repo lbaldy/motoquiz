@@ -13,6 +13,9 @@ import {QuestionComponent} from "./question/question.component";
 import {MenuComponent} from "./menu/menu.component";
 import {ChallengeService} from "./services/challenge.service";
 import {ChallengeComponent} from "./challenge/challenge.component";
+import {AUTH_PROVIDERS} from "angular2-jwt/angular2-jwt";
+import {LoginComponent} from "./login/login.component";
+import {LoginService} from "./services/login.service";
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import {ChallengeComponent} from "./challenge/challenge.component";
     ChallengeComponent,
     FreeplayComponent,
     QuestionComponent,
-    MenuComponent
+    MenuComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -44,12 +48,18 @@ import {ChallengeComponent} from "./challenge/challenge.component";
       {
         path: 'freeplay',
         component: FreeplayComponent
-      }
+      },
+      {
+        path: 'login',
+        component: LoginComponent
+      },
     ])
   ],
   providers: [
     QuizService,
-    ChallengeService
+    ChallengeService,
+    LoginService,
+    AUTH_PROVIDERS
   ],
   bootstrap: [AppComponent]
 })

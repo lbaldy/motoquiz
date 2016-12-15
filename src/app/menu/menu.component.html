@@ -1,3 +1,14 @@
 <div class="hamburger-menu-btn">
   <i class="glyphicon glyphicon-menu-hamburger hamburger-menu-btn-glyph" (click)="openMenu()"></i>
 </div>
+
+<div class="side-menu" *ngIf="show">
+  <ul class="nav nav-pills nav-stacked">
+    <li><i class="glyphicon glyphicon-chevron-left" (click)="hideMenu()"></i></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/login">Login</a></li>
+    <li><a href="/challenges">Challenges</a></li>
+    <li><a href="/freeplay">Freeplay</a></li>
+  </ul>
+</div>
+

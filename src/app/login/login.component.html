@@ -1,0 +1,10 @@
+<div class="form-group">
+  <label for="exampleInputEmail1">Login</label>
+  <input type="email" class="form-control" id="exampleInputEmail1" [(ngModel)]="login" placeholder="Login">
+</div>
+<div class="form-group">
+  <label for="exampleInputPassword1">Password</label>
+  <input type="password" class="form-control" [(ngModel)]="password" id="exampleInputPassword1" placeholder="Password">
+</div>
+<button class="btn btn-default" (click)="getToken()">Submit</button>
+

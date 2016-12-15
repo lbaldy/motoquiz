@@ -16,7 +16,11 @@ export class MenuComponent {
   }
 
   openMenu():void {
-    this.router.navigate(['/'])
+    this.show = true;
+  }
+
+  hideMenu():void {
+    this.show = false;
   }
 
 }
